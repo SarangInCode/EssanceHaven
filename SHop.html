@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Essence Haven</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base styles inherited from index */
+        :root {
+            --primary-bg: #0F0F0F; --secondary-bg: #111111;
+            --accent-gold: #D4AF37; --text-light: #FFFFFF;
+            --text-muted: #A0A0A0; --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background-color: var(--primary-bg); color: var(--text-light); }
+        a { text-decoration: none; color: inherit; }
+
+        /* Minimal Header */
+        header { padding: 20px; background: rgba(15, 15, 15, 0.95); border-bottom: 1px solid rgba(212, 175, 55, 0.2); display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--font-heading); font-size: 24px; color: var(--accent-gold); letter-spacing: 2px; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { text-transform: uppercase; font-size: 14px; }
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        /* Shop Header & Filters */
+        .shop-header { text-align: center; padding: 100px 20px 40px; }
+        .shop-header h1 { font-family: var(--font-heading); font-size: 3rem; margin-bottom: 20px; }
+        
+        .filter-container { display: flex; justify-content: center; gap: 15px; margin-bottom: 50px; }
+        .filter-btn { background: transparent; border: 1px solid var(--text-muted); color: var(--text-light); padding: 10px 20px; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        .filter-btn.active, .filter-btn:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+
+        /* Product Grid */
+        .product-grid { max-width: 1200px; margin: 0 auto 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 0 20px; }
+        .product-card { background-color: var(--secondary-bg); border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+        .product-card:hover { transform: translateY(-5px); border-color: rgba(212, 175, 55, 0.3); }
+        .product-image { width: 100%; height: 350px; object-fit: cover; }
+        .product-info { padding: 20px; text-align: center; }
+        .product-title { font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 10px; }
+        .product-price { color: var(--accent-gold); margin-bottom: 15px; }
+        .add-to-cart { background: var(--accent-gold); color: #000; border: none; padding: 10px 20px; cursor: pointer; width: 100%; font-weight: 600; text-transform: uppercase; }
+        .add-to-cart:hover { background: #b5952f; }
+
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">ESSENCE HAVEN</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html" style="color: var(--accent-gold);">Shop</a></li>
+            <li><a href="premium-collection.html">Premium</a></li>
+        </ul>
+    </header>
+
+    <div class="shop-header">
+        <h1>The Complete Catalog</h1>
+        <p style="color: var(--text-muted);">Explore our entire range of artisanal fragrances.</p>
+    </div>
+
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="filterSelection('all')">Show All</button>
+        <button class="filter-btn" onclick="filterSelection('perfume')">Perfumes</button>
+        <button class="filter-btn" onclick="filterSelection('essence')">Essence Sticks</button>
+    </div>
+
+    <div class="product-grid">
+        <div class="product-card filter-item perfume">
+            <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80" alt="Noir" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Noir Extrait</h3>
+                <p class="product-price">₹5,200</p>
+                <button class="add-to-cart" onclick="alert('Added to cart!')">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card filter-item essence">
+            <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=600&q=80" alt="Incense" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Royal Sandalwood Sticks</h3>
+                <p class="product-price">₹1,800</p>
+                <button class="add-to-cart" onclick="alert('Added to cart!')">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card filter-item perfume">
+            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=600&q=80" alt="Rose" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Velvet Rose</h3>
+                <p class="product-price">₹3,200</p>
+                <button class="add-to-cart" onclick="alert('Added to cart!')">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="product-card filter-item essence">
+            <img src="https://images.unsplash.com/photo-1602928321679-560bb453f190?auto=format&fit=crop&w=600&q=80" alt="Patchouli" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Patchouli Dream Sticks</h3>
+                <p class="product-price">₹1,500</p>
+                <button class="add-to-cart" onclick="alert('Added to cart!')">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterSelection(category) {
+            let items = document.getElementsByClassName("filter-item");
+            let btns = document.getElementsByClassName("filter-btn");
+
+            // Update active button styling
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("active");
+                if (btns[i].getAttribute("onclick").includes(category)) {
+                    btns[i].classList.add("active");
+                }
+            }
+
+            // Hide/Show items based on category
+            for (let i = 0; i < items.length; i++) {
+                items[i].classList.remove("hidden");
+                if (category !== "all" && !items[i].classList.contains(category)) {
+                    items[i].classList.add("hidden");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

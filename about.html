@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | Essence Haven</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-bg: #0F0F0F; --secondary-bg: #111111;
+            --accent-gold: #D4AF37; --text-light: #FFFFFF;
+            --text-muted: #A0A0A0; --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background-color: var(--primary-bg); color: var(--text-light); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        /* Header */
+        header { padding: 20px; background: rgba(15, 15, 15, 0.95); border-bottom: 1px solid rgba(212, 175, 55, 0.2); display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 100; }
+        .logo { font-family: var(--font-heading); font-size: 24px; color: var(--accent-gold); letter-spacing: 2px; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { text-transform: uppercase; font-size: 14px; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-gold); }
+
+        /* Hero */
+        .about-hero { height: 70vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(15,15,15,1)), url('https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1920&q=80') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; margin-top: 60px; }
+        .about-hero h1 { font-family: var(--font-heading); font-size: 4rem; color: var(--accent-gold); margin-bottom: 20px; }
+        .about-hero p { font-size: 1.2rem; max-width: 600px; color: var(--text-muted); }
+
+        /* Editorial Content */
+        .editorial { max-width: 1000px; margin: 80px auto; padding: 0 20px; text-align: center; }
+        .editorial h2 { font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 30px; }
+        .editorial p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px; }
+        .editorial-image { width: 100%; height: 500px; object-fit: cover; margin: 50px 0; border: 1px solid rgba(212, 175, 55, 0.2); }
+
+        /* Core Values */
+        .values { background: var(--secondary-bg); padding: 80px 20px; border-top: 1px solid rgba(212, 175, 55, 0.1); }
+        .values-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: center; }
+        .value-card h3 { font-family: var(--font-heading); font-size: 1.8rem; color: var(--accent-gold); margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">ESSENCE HAVEN</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html" class="active">Our Story</a></li>
+        </ul>
+    </header>
+
+    <div class="about-hero">
+        <h1>The Pursuit of Perfection</h1>
+        <p>Born from a desire to capture the world's most evocative memories in a single drop of essence.</p>
+    </div>
+
+    <div class="editorial">
+        <h2>A Heritage of Craftsmanship</h2>
+        <p>Founded in 2026, Essence Haven began as a private atelier catering exclusively to bespoke clients. Our founders traveled the globe—from the rose valleys of Bulgaria to the ancient agarwood forests of Southeast Asia—seeking materials of uncompromised purity.</p>
+        
+        <img src="https://images.unsplash.com/photo-1629198725656-3232c4b5bc05?auto=format&fit=crop&w=1200&q=80" alt="Perfume Lab" class="editorial-image">
+        
+        <p>We believe that a fragrance is more than a scent; it is an invisible signature. Every bottle we produce undergoes a meticulous 90-day maceration process, ensuring that the notes bind harmoniously before they ever touch your skin.</p>
+    </div>
+
+    <div class="values">
+        <div class="values-grid">
+            <div class="value-card">
+                <h3>01. Purity</h3>
+                <p style="color: var(--text-muted);">We utilize only the highest grade botanical extracts, free from synthetic diluents.</p>
+            </div>
+            <div class="value-card">
+                <h3>02. Sustainability</h3>
+                <p style="color: var(--text-muted);">Our ingredients are ethically harvested, ensuring the longevity of the ecosystems we source from.</p>
+            </div>
+            <div class="value-card">
+                <h3>03. Artistry</h3>
+                <p style="color: var(--text-muted);">Every fragrance is engineered by master perfumers to tell a distinct, evolving story on the skin.</p>
+            </div>
+        </div>
+    </div>
+
+    </body>
+</html>

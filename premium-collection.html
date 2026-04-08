@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Collection | Essence Haven</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-bg: #0F0F0F; --accent-gold: #D4AF37; 
+            --text-light: #FFFFFF; --text-muted: #A0A0A0; 
+            --font-heading: 'Playfair Display', serif; --font-body: 'Montserrat', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background-color: var(--primary-bg); color: var(--text-light); }
+        a { text-decoration: none; color: inherit; }
+
+        header { padding: 20px; background: rgba(15, 15, 15, 0.95); border-bottom: 1px solid rgba(212, 175, 55, 0.2); display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; z-index: 100;}
+        .logo { font-family: var(--font-heading); font-size: 24px; color: var(--accent-gold); letter-spacing: 2px; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { text-transform: uppercase; font-size: 14px; }
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        .vip-hero { height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.5), rgba(15,15,15,1)), url('https://images.unsplash.com/photo-1615992174118-9b8e9be025e7?auto=format&fit=crop&w=1920&q=80') center/cover; }
+        .vip-hero h1 { font-family: var(--font-heading); font-size: 4rem; color: var(--accent-gold); }
+
+        /* ZigZag Layout */
+        .story-section { display: flex; max-width: 1200px; margin: 100px auto; align-items: center; gap: 50px; padding: 0 20px; }
+        .story-section.reverse { flex-direction: row-reverse; }
+        .story-image { flex: 1; height: 600px; object-fit: cover; border: 1px solid rgba(212, 175, 55, 0.3); }
+        .story-content { flex: 1; padding: 40px; }
+        
+        .story-content h2 { font-family: var(--font-heading); font-size: 3rem; margin-bottom: 20px; }
+        .story-content p { color: var(--text-muted); line-height: 1.8; margin-bottom: 30px; font-size: 1.1rem; }
+        
+        .btn-vip { background: transparent; color: var(--accent-gold); border: 2px solid var(--accent-gold); padding: 15px 40px; text-transform: uppercase; font-weight: 600; cursor: pointer; transition: 0.3s; }
+        .btn-vip:hover { background: var(--accent-gold); color: #000; }
+
+        @media (max-width: 768px) {
+            .story-section, .story-section.reverse { flex-direction: column; }
+            .story-image { height: 400px; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">ESSENCE HAVEN</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="premium-collection.html" style="color: var(--accent-gold);">Premium</a></li>
+        </ul>
+    </header>
+
+    <div class="vip-hero">
+        <h1>The Reserve Collection</h1>
+    </div>
+
+    <section class="story-section">
+        <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=80" alt="Amber Gold" class="story-image">
+        <div class="story-content">
+            <h2>Amber Gold Reserve</h2>
+            <p>Crafted over 12 months in oak barrels, Amber Gold represents the pinnacle of olfactory engineering. With rich base notes of vintage leather and spiced vanilla, this limited edition fragrance is designed for those who command the room without saying a word.</p>
+            <h3 style="color: var(--accent-gold); margin-bottom: 20px; font-size: 1.5rem;">₹12,500</h3>
+            <button class="btn-vip" onclick="alert('Proceeding to VIP Checkout...')">Secure Your Bottle</button>
+        </div>
+    </section>
+
+    <section class="story-section reverse">
+        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80" alt="Midnight Obsidian" class="story-image">
+        <div class="story-content">
+            <h2>Midnight Obsidian</h2>
+            <p>Sourced from the rarest black orchids and infused with pure agarwood oil. Midnight Obsidian is a dark, complex, and intoxicating scent profile that evolves on the skin hour after hour. Only 500 bottles produced globally.</p>
+            <h3 style="color: var(--accent-gold); margin-bottom: 20px; font-size: 1.5rem;">₹18,000</h3>
+            <button class="btn-vip" onclick="alert('Proceeding to VIP Checkout...')">Secure Your Bottle</button>
+        </div>
+    </section>
+
+</body>
+</html>
